@@ -21,7 +21,7 @@ public class Login extends Base{
 	@FindBy(xpath="//input[@id='txtPassword']")
 	WebElement password;
 	
-	@FindBy(xpath="(//span[@class='loginButtonText'])[1]")
+	@FindBy(id="sub")
 	WebElement loginButton;
 	
 	
@@ -41,7 +41,7 @@ public class Login extends Base{
 			password.sendKeys(userPassword);
 			System.out.println("User Password::-"+userPassword);
 			Thread.sleep(3000);
-			loginButton.submit();
+			loginButton.click();;
 			constants.test.log(LogStatus.PASS, "Login is successfull");
 		}catch(Exception e){
 			e.printStackTrace();

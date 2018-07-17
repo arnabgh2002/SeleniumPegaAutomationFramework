@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14615" started-at="2018-07-17T00:03:32Z" finished-at="2018-07-17T00:03:46Z">
+  <suite name="Default suite" duration-ms="19190" started-at="2018-07-17T12:34:37Z" finished-at="2018-07-17T12:34:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14615" started-at="2018-07-17T00:03:32Z" finished-at="2018-07-17T00:03:46Z">
+    <test name="Default test" duration-ms="19190" started-at="2018-07-17T12:34:37Z" finished-at="2018-07-17T12:34:56Z">
       <class name="TestCases.SampleTest">
-        <test-method status="PASS" signature="beforesuite()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforesuite" is-config="true" duration-ms="252" started-at="2018-07-17T00:03:31Z" finished-at="2018-07-17T00:03:32Z">
+        <test-method status="PASS" signature="beforesuite()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforesuite" is-config="true" duration-ms="175" started-at="2018-07-17T12:34:37Z" finished-at="2018-07-17T12:34:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforesuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeTest" is-config="true" duration-ms="0" started-at="2018-07-17T00:03:32Z" finished-at="2018-07-17T00:03:32Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeTest" is-config="true" duration-ms="0" started-at="2018-07-17T12:34:37Z" finished-at="2018-07-17T12:34:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeClass" is-config="true" duration-ms="1" started-at="2018-07-17T00:03:32Z" finished-at="2018-07-17T00:03:32Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeClass" is-config="true" duration-ms="11" started-at="2018-07-17T12:34:37Z" finished-at="2018-07-17T12:34:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeMethod" is-config="true" duration-ms="6564" started-at="2018-07-17T00:03:32Z" finished-at="2018-07-17T00:03:38Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeMethod" is-config="true" duration-ms="6155" started-at="2018-07-17T12:34:37Z" finished-at="2018-07-17T12:34:43Z">
           <params>
             <param index="0">
               <value>
@@ -30,11 +30,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="test1" duration-ms="7349" started-at="2018-07-17T00:03:38Z" finished-at="2018-07-17T00:03:46Z">
+        <test-method status="PASS" signature="test1()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="test1" duration-ms="12461" started-at="2018-07-17T12:34:43Z" finished-at="2018-07-17T12:34:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterMethod" is-config="true" duration-ms="661" started-at="2018-07-17T00:03:46Z" finished-at="2018-07-17T00:03:46Z">
+        <test-method status="PASS" signature="afterMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterMethod" is-config="true" duration-ms="540" started-at="2018-07-17T12:34:56Z" finished-at="2018-07-17T12:34:56Z">
           <params>
             <param index="0">
               <value>
@@ -45,14 +45,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-07-17T00:03:46Z" finished-at="2018-07-17T00:03:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-07-17T00:03:46Z" finished-at="2018-07-17T00:03:46Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-07-17T12:34:56Z" finished-at="2018-07-17T12:34:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-07-17T12:34:56Z" finished-at="2018-07-17T12:34:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- TestCases.SampleTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

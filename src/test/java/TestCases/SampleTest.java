@@ -17,6 +17,7 @@ import Base.Base;
 import Pages.Login;
 import Util.constants;
 import Util.lib;
+import Pages.HomePage;
 
 
 public class SampleTest extends Base{
@@ -28,10 +29,12 @@ public class SampleTest extends Base{
   @Test
   public void test1() {
 	  Login login;
+	  HomePage home;
 	  try{
 		  login=new Login();
 		  login.Login(configData.getProperty("MTMAuditorLoginID"), configData.getProperty("MTMAuditorLoginPassword"));
-		  
+		  home=new HomePage();
+		  home.welocmeToIAuditCloseDialoge();
 	  }catch(Exception e){
 		  e.printStackTrace();
 	  }

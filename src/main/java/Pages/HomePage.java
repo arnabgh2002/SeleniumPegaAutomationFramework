@@ -29,6 +29,7 @@ public class HomePage extends Base{
 	public void welocmeToIAuditCloseDialoge(){
 		try{
 			welcomeIAuditCloseIcon.click();
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
