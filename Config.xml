@@ -2,6 +2,6 @@
 <properties>
 	<entry key="Browser">Chrome</entry>
 	<entry key="URL">http://35.165.187.145:8080/prweb</entry>
-	<entry key="LoginID">MTMAuditor</entry>
-	<entry key="LoginPassword">hciaudit18</entry>
+	<entry key="MTMAuditorLoginID">MTMAuditor</entry>
+	<entry key="MTMAuditorLoginPassword">hciaudit18</entry>
 </properties>

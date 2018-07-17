@@ -30,7 +30,7 @@ public class SampleTest extends Base{
 	  Login login;
 	  try{
 		  login=new Login();
-		  login.Login(configData.getProperty("LoginID"), configData.getProperty("LoginPassword"));
+		  login.Login(configData.getProperty("MTMAuditorLoginID"), configData.getProperty("MTMAuditorLoginPassword"));
 		  
 	  }catch(Exception e){
 		  e.printStackTrace();
