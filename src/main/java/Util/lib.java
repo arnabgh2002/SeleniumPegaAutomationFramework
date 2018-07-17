@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
+import com.relevantcodes.extentreports.LogStatus;
 
 import Base.Base;
 import ExtentReports.ExtentManager;
@@ -80,12 +81,17 @@ public class lib extends Base{
 		return number;
 	}
 	
-	public static void takeScreenshotAtEndOfTest() throws IOException {
+	public static void takeScreenshot() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
-		
-		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
-		
+		File screenFile=new File(currentDir.toString().replace("\\", "/") + "/screenshots/" + System.currentTimeMillis() + ".png");
+//		FileUtils.copyFile(scrFile, new File(currentDir.toString().replace("\\", "/") + "/screenshots/" + System.currentTimeMillis() + ".png"));
+		FileUtils.copyFile(scrFile, screenFile);
+		String imgPath=screenFile.getPath();		
+		System.out.println(imgPath);
+		constants.test.log(LogStatus.INFO, "Screenshot Below ::"+constants.test.addScreenCapture(imgPath));
+		constants.extent.endTest(constants.test);
+		constants.extent.flush();
 		}
 
 	public static void beforeMethod(String methodName){

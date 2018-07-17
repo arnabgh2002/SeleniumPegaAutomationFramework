@@ -9,6 +9,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import Base.Base;
 import Util.CommonUtils;
 import Util.constants;
+import Util.lib;
 
 
 
@@ -43,6 +44,7 @@ public class Login extends Base{
 			Thread.sleep(3000);
 			loginButton.click();;
 			constants.test.log(LogStatus.PASS, "Login is successfull");
+			lib.takeScreenshot();
 		}catch(Exception e){
 			e.printStackTrace();
 			constants.test.log(LogStatus.FAIL, "Login is Failed");

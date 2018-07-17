@@ -4,7 +4,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import Base.Base;
+import Util.constants;
 
 public class HomePage extends Base{
 	
@@ -29,7 +32,7 @@ public class HomePage extends Base{
 	public void welocmeToIAuditCloseDialoge(){
 		try{
 			welcomeIAuditCloseIcon.click();
-			
+			constants.test.log(LogStatus.PASS, "Closing the Welcome Screen");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
