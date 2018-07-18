@@ -1,15 +1,36 @@
 package Util;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import Base.Base;
 
 
+/**
+ * @author Arnab Ghosh
+ * Description :- This Class contains all reusable common WebElement methods.
+ *
+ */
 public class CommonUtils extends Base {
 
+	public CommonUtils(){
+		PageFactory.initElements(driver, this);
+	}
+	
+	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- Selects a dropdown value using the text.
+	 * @param webElement
+	 * @param valueByVisibleText
+	 * @return
+	 */
 	public static boolean selectDropdownValueByVisibleText(WebElement webElement,String valueByVisibleText){
 		boolean result=false;		
 		
@@ -25,6 +46,13 @@ public class CommonUtils extends Base {
 		return result;
 	}
 	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- Selects a dropdown value using the index number.
+	 * @param webElement
+	 * @param indexNumber
+	 * @return
+	 */
 	public static boolean selectDropdownValueByIndex(WebElement webElement,int indexNumber){
 		boolean result=false;		
 		
@@ -40,6 +68,13 @@ public class CommonUtils extends Base {
 	}
 	
 	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- Selects multiple options in and multiselect picklist (dropdown)
+	 * @param webElement
+	 * @param value
+	 * @return
+	 */
 	public static boolean dropDownMultiSelectAdd(WebElement webElement,String value){
 		
 		boolean result=false;
@@ -79,6 +114,40 @@ public class CommonUtils extends Base {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- Switch to desired iframe by passing the WebElement.
+	 * @param element
+	 * @return
+	 * @throws Exception
+	 */
+	public static boolean switchToStandardObjFrame(WebElement element) throws Exception {
+		boolean found=false;
+		driver.switchTo().defaultContent();
+		//getting the total number of iFrame.
+//		int size=driver.findElements(By.tagName("iframe")).size();
+		List<WebElement> iFrameList=driver.findElements(By.tagName("iframe"));
+		
+		for(WebElement iframe:iFrameList){
+			driver.switchTo().defaultContent();
+			driver.switchTo().frame(iframe);
+			try{
+				//checking the element is present in the current iframe.
+				if(element.isDisplayed()){
+					driver.switchTo().defaultContent();
+					driver.switchTo().frame(iframe);
+					found=true;
+					break;
+				}
+			}catch(NoSuchElementException e){
+				System.out.println("No found in current iframe::-"+iframe);
+//				e.printStackTrace();
+			}
+		}
+		
+		return found;
 	}
 	
 }

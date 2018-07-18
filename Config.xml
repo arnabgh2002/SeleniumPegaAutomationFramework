@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<entry key="Browser">Chrome</entry>
+	<entry key="TestDataExcelFileName">iAudit_Data_File.xlsx</entry>
 	<entry key="URL">http://35.165.187.145:8080/prweb</entry>
 	<entry key="MTMAuditorLoginID">MTMAuditor</entry>
 	<entry key="MTMAuditorLoginPassword">hciaudit18</entry>

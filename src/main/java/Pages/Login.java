@@ -30,7 +30,7 @@ public class Login extends Base{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void Login(String userNm,String userPassword){
+	public void iAuditApplicationLogin(String userNm,String userPassword){
 		
 		try{
 			
@@ -44,7 +44,7 @@ public class Login extends Base{
 			Thread.sleep(3000);
 			loginButton.click();;
 			constants.test.log(LogStatus.PASS, "Login is successfull");
-			lib.takeScreenshot();
+//			lib.takeScreenshot();
 		}catch(Exception e){
 			e.printStackTrace();
 			constants.test.log(LogStatus.FAIL, "Login is Failed");

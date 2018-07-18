@@ -2,6 +2,8 @@ package Util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -16,11 +18,23 @@ import com.codoid.products.fillo.Recordset;
 import com.relevantcodes.extentreports.LogStatus;
 
 import Base.Base;
-import ExtentReports.ExtentManager;
+//import ExtentReports.ExtentManager;
 
+/**
+ * @author Arnab Ghosh
+ * Description :- In this class we will be writing all the Framework Related Methods.
+ *
+ */
 public class lib extends Base{
 	
 	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- This Method is created to read test data from Excel using an external api called Fillo.
+	 * @param FileLoc
+	 * @param Query
+	 * @return
+	 */
 	public static HashMap<String,String> GetDataFromExcel(String FileLoc,String Query){
 		
 		HashMap<String,String> results = new HashMap<String,String>();
@@ -70,6 +84,11 @@ public class lib extends Base{
 		return results;
 	}
 	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- This method generates Random number.
+	 * @return
+	 */
 	public static int random(){
 		
 		int number=0;
@@ -81,6 +100,11 @@ public class lib extends Base{
 		return number;
 	}
 	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- This method takes screenshot save in a folder. Also added capabilities to add screenshot in report using Extent Report.
+	 * @throws IOException
+	 */
 	public static void takeScreenshot() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
@@ -94,14 +118,39 @@ public class lib extends Base{
 		constants.extent.flush();
 		}
 
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- This Method is written to initiate Extent Report.
+	 * @param methodName
+	 */
 	public static void beforeMethod(String methodName){
 		constants.test=constants.extent.startTest(methodName);
 		constants.test.assignAuthor("Automation Team");
 		constants.test.assignCategory("Automation Test");
 	}
 	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- Used to end test for Extent Report.
+	 * @param methodName
+	 */
 	public static void afterMethod(String methodName){
 		constants.extent.endTest(constants.test);
 		constants.extent.flush();
+	}
+	
+	/**
+	 * Author :- Arnab Ghosh
+	 * Description :- Will print exception incase any exception happens in any method.
+	 * @param e
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getStackTrace(Exception e) throws Exception{
+		StringWriter sw=new StringWriter();
+		PrintWriter pw=new PrintWriter(sw);
+		e.printStackTrace(pw);
+		String errorMessage=e.toString();
+		return errorMessage;
 	}
 }
