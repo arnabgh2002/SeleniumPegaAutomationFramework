@@ -10,6 +10,11 @@ import Base.Base;
 import Util.constants;
 import Util.lib;
 
+/**
+ * @author Arnab
+ * Description :- This Class will contain all the web elements and methods related to iAudit application 'Home' page.
+ *
+ */
 public class HomePage extends Base{
 	
 	@FindBy(xpath="//h3[text()='Welcome to iAudit']/following::a[1]")
@@ -32,6 +37,10 @@ public class HomePage extends Base{
 		PageFactory.initElements(driver, this);
 	}
 	
+	/**
+	 * Author :- Arnab
+	 * Description :- This Method closes the iAudit welcome screen.
+	 */
 	public void welocmeToIAuditCloseDialoge(){
 		try{
 			Thread.sleep(4000);
@@ -48,9 +57,16 @@ public class HomePage extends Base{
 		}
 	}
 	
-	public void navigateToSampleScheduleRequest() throws Exception{
+	/**
+	 * Author :- Arnab
+	 * Description :- This method will navigate to sample schedule request.
+	 * @return :- Returns the object of the next page.
+	 * @throws Exception
+	 */
+	public SampleScheduleRequest navigateToSampleScheduleRequest() throws Exception{
 		sampleScheduleRequest.click();
 		constants.test.log(LogStatus.PASS, "Clicked 'Sample Schedule Request' to Navigate to Sample Schedule Request page.");
+		return new SampleScheduleRequest();
 	}
 
 }

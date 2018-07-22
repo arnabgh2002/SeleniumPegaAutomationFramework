@@ -3,6 +3,7 @@ package TestCases;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -38,10 +39,11 @@ public class SampleTest extends Base{
 	  String testName=new Object(){}.getClass().getEnclosingMethod().getName();
 	  
 	  try{
+		  //reading test data from excel
 		  HashMap<String, String> hm=lib.GetDataFromExcel(constants.testDataPath+"\\\\"+configData.getProperty("TestDataExcelFileName"),
 				  "Select * from Enrollment where TestName='"+testName+"'");
-		  login.iAuditApplicationLogin(configData.getProperty("MTMAuditorLoginID"), configData.getProperty("MTMAuditorLoginPassword"));
-		 
+		  home=login.iAuditApplicationLogin(configData.getProperty("MTMAuditorLoginID"), configData.getProperty("MTMAuditorLoginPassword"));
+
 		  //closing the welcome screen
 		  home.welocmeToIAuditCloseDialoge();
 		  
@@ -50,14 +52,33 @@ public class SampleTest extends Base{
 		  home.navigateToSampleScheduleRequest();
 		  
 		  //selecting the Measure dropdown value.
-		  String dropdownValue=hm.get("Measure"+constants.i);
-		  System.out.println(dropdownValue);
-		  if(sampleScheduleRequest.selectMeasureDropdown(dropdownValue)){
+
+		  if(sampleScheduleRequest.selectMeasureDropdown(hm.get("Measure"+constants.i))){
 			  constants.test.log(LogStatus.PASS, "Selected '"+hm.get("Measure"+constants.i)+"' value in Measure Dropdown.");
 		  }else{
 			  constants.test.log(LogStatus.FAIL, "Fail to select '"+hm.get("Measure"+constants.i)+"' value in Measure Dropdown.");
 		  }
 		  
+
+		  
+		  //validate the column labels for Enrollment.
+		  
+		  int noOfColumnHeader=driver.findElements(By.xpath("//span[text()='Audit From Date']/ancestor-or-self::tr[1]/th")).size();
+		  
+		  String colText="";
+		  for(int i=1;i<noOfColumnHeader;i++){
+
+			  colText=driver.findElement(By.xpath("//span[text()='Audit From Date']/ancestor-or-self::tr[1]/th["+i+"]")).getAttribute("data-attribute-name");
+			  if(hm.get("Enrolment Column Header"+constants.i).contains(colText)){
+				  constants.test.log(LogStatus.PASS, "Column '"+colText+"' is present in the UI.");
+			  }else{
+				  constants.test.log(LogStatus.FAIL, "Column '"+colText+"' is not present in the UI.");
+			  }
+			  
+		  }
+		  
+		  //Enter data for Enrollment
+		  sampleScheduleRequest.dataEntryForEnrollmentSampleScheduleRequest(hm);
 		  
 	  }catch(Exception e){
 //		  e.printStackTrace();
@@ -67,17 +88,12 @@ public class SampleTest extends Base{
   }
   
 
-  @Test
-  public void a() throws Exception{
-	  System.out.println(constants.testDataPath);
-  }
-  
   
   
   @BeforeMethod
   public void beforeMethod(Method method) {
+	  
 	  ReadConfigData();
-
 	  initiateWebdriver();
 	  String methodName=method.getName();
 	  lib.beforeMethod(methodName);
@@ -111,6 +127,7 @@ public class SampleTest extends Base{
 
   @BeforeSuite
   public void beforesuite(){
+	  //Extent Report
 	  constants.extent=new ExtentReports(System.getProperty("user.dir").toString().replace("\\", "/")+
 			  "/test-output/reports/testreport"+constants.dateFormat.format(constants.cal.getTime())+".html", true);
   }

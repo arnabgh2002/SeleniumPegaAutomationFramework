@@ -13,6 +13,11 @@ import Util.lib;
 
 
 
+/**
+ * @author Arnab
+ * Description :- This Class will contain all the web elements and methods related to iAudit application 'Login' page.
+ *
+ */
 
 public class Login extends Base{
 
@@ -30,7 +35,14 @@ public class Login extends Base{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void iAuditApplicationLogin(String userNm,String userPassword){
+	/**
+	 * Author :- Arnab 
+	 * Description :- This method is used to login to the iAudit Application
+	 * @param userNm :- User Name
+	 * @param userPassword :- Password
+	 * @return :- It returns object of the next page
+	 */
+	public HomePage iAuditApplicationLogin(String userNm,String userPassword){
 		
 		try{
 			
@@ -49,6 +61,6 @@ public class Login extends Base{
 			e.printStackTrace();
 			constants.test.log(LogStatus.FAIL, "Login is Failed");
 		}
-//		return new HomePage();
+		return new HomePage();
 	}
 }
