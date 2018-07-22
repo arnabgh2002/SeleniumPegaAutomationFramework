@@ -62,7 +62,7 @@ public class SampleTest extends Base{
 
 		  
 		  //validate the column labels for Enrollment.
-		  
+		  Thread.sleep(4000);
 		  int noOfColumnHeader=driver.findElements(By.xpath("//span[text()='Audit From Date']/ancestor-or-self::tr[1]/th")).size();
 		  
 		  String colText="";
