@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -152,5 +154,15 @@ public class lib extends Base{
 		e.printStackTrace(pw);
 		String errorMessage=e.toString();
 		return errorMessage;
+	}
+	
+	public static String getCurrentDateInMMDDYYYFormat() throws Exception{
+		String currentDate="";
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");  
+		LocalDateTime now = LocalDateTime.now();  
+		currentDate=dtf.format(now).toString().trim();
+		System.out.println("Current Data in MM/DD/YYYY format::- "+currentDate);
+		return null;
+		
 	}
 }

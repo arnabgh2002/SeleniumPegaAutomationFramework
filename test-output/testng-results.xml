@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69222" started-at="2018-07-22T15:56:10Z" finished-at="2018-07-22T15:57:19Z">
+  <suite name="Default suite" duration-ms="46652" started-at="2018-07-24T16:59:31Z" finished-at="2018-07-24T17:00:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69222" started-at="2018-07-22T15:56:10Z" finished-at="2018-07-22T15:57:19Z">
+    <test name="Default test" duration-ms="46652" started-at="2018-07-24T16:59:31Z" finished-at="2018-07-24T17:00:17Z">
       <class name="TestCases.SampleTest">
-        <test-method status="PASS" signature="beforesuite()[pri:0, instance:TestCases.SampleTest@1623b78d]" name="beforesuite" is-config="true" duration-ms="399" started-at="2018-07-22T15:56:10Z" finished-at="2018-07-22T15:56:10Z">
+        <test-method status="PASS" signature="beforesuite()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforesuite" is-config="true" duration-ms="241" started-at="2018-07-24T16:59:31Z" finished-at="2018-07-24T16:59:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforesuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCases.SampleTest@1623b78d]" name="beforeTest" is-config="true" duration-ms="0" started-at="2018-07-22T15:56:10Z" finished-at="2018-07-22T15:56:10Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeTest" is-config="true" duration-ms="0" started-at="2018-07-24T16:59:31Z" finished-at="2018-07-24T16:59:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.SampleTest@1623b78d]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-07-22T15:56:10Z" finished-at="2018-07-22T15:56:10Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-07-24T16:59:31Z" finished-at="2018-07-24T16:59:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@1623b78d]" name="beforeMethod" is-config="true" duration-ms="5835" started-at="2018-07-22T15:56:10Z" finished-at="2018-07-22T15:56:16Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="beforeMethod" is-config="true" duration-ms="6318" started-at="2018-07-24T16:59:31Z" finished-at="2018-07-24T16:59:37Z">
           <params>
             <param index="0">
               <value>
@@ -30,11 +30,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="iAuditSampleScheduleRequestEnrollment()[pri:0, instance:TestCases.SampleTest@1623b78d]" name="iAuditSampleScheduleRequestEnrollment" duration-ms="62918" started-at="2018-07-22T15:56:16Z" finished-at="2018-07-22T15:57:19Z">
+        <test-method status="PASS" signature="iAuditSampleScheduleRequestEnrollment()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="iAuditSampleScheduleRequestEnrollment" duration-ms="39560" started-at="2018-07-24T16:59:37Z" finished-at="2018-07-24T17:00:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iAuditSampleScheduleRequestEnrollment -->
-        <test-method status="PASS" signature="afterMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@1623b78d]" name="afterMethod" is-config="true" duration-ms="437" started-at="2018-07-22T15:57:19Z" finished-at="2018-07-22T15:57:19Z">
+        <test-method status="PASS" signature="afterMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterMethod" is-config="true" duration-ms="729" started-at="2018-07-24T17:00:17Z" finished-at="2018-07-24T17:00:17Z">
           <params>
             <param index="0">
               <value>
@@ -45,11 +45,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestCases.SampleTest@1623b78d]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-07-22T15:57:19Z" finished-at="2018-07-22T15:57:19Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-07-24T17:00:17Z" finished-at="2018-07-24T17:00:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestCases.SampleTest@1623b78d]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-07-22T15:57:19Z" finished-at="2018-07-22T15:57:19Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestCases.SampleTest@7b49cea0]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-07-24T17:00:17Z" finished-at="2018-07-24T17:00:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

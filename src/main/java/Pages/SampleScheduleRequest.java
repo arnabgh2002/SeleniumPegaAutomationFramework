@@ -2,6 +2,8 @@ package Pages;
 
 import Base.Base;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import Util.CommonUtils;
 import Util.constants;
+import Util.lib;
 
 /**
  * @author Arnab
@@ -84,7 +87,6 @@ public class SampleScheduleRequest extends Base{
 		
 		String SSRid="";
 		
-		
 		//Switching to the iFrame. 
 		CommonUtils.switchToStandardObjFrame(measureDropdown);
 		
@@ -105,13 +107,12 @@ public class SampleScheduleRequest extends Base{
 			constants.test.log(LogStatus.PASS, "'Audit To Date' = '"+testdata.get("Audit To Date"+constants.i)+"'");
 		}
 		
-		if(testdata.get("Audit Run Date"+constants.i).isEmpty()){
-			constants.test.log(LogStatus.INFO, "No data entered for 'Audit Run Date' as there is no data in test data excel");
-		}else{
-			auditRunDate.clear();
-			auditRunDate.sendKeys(testdata.get("Audit Run Date"+constants.i));
-			constants.test.log(LogStatus.PASS, "'Audit Run Date' = '"+testdata.get("Audit Run Date"+constants.i)+"'");
-		}
+		//Audit Run Date will take current date.
+		auditRunDate.clear();
+		String auditRunDateData=lib.getCurrentDateInMMDDYYYFormat();
+		System.out.println("auditRunDateData="+auditRunDate);
+		auditRunDate.sendKeys(auditRunDateData);
+		constants.test.log(LogStatus.PASS, "'Audit Run Date' = '"+testdata.get("Audit Run Date"+constants.i)+"'");
 		
 		
 		if(testdata.get("Sampling Method"+constants.i).isEmpty()){
