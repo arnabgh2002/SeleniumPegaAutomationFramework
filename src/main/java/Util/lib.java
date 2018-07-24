@@ -162,7 +162,7 @@ public class lib extends Base{
 		LocalDateTime now = LocalDateTime.now();  
 		currentDate=dtf.format(now).toString().trim();
 		System.out.println("Current Data in MM/DD/YYYY format::- "+currentDate);
-		return null;
+		return currentDate;
 		
 	}
 }
