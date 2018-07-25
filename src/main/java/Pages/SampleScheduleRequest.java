@@ -76,6 +76,7 @@ public class SampleScheduleRequest extends Base{
 		return result;
 	}
 	
+
 	/**
 	 * Author :- Arnab
 	 * Description :- This method is used for entering Data in the Schedule Request Page with Measure Dropdown value is 'Enrollment'
@@ -112,7 +113,7 @@ public class SampleScheduleRequest extends Base{
 		String auditRunDateData=lib.getCurrentDateInMMDDYYYFormat();
 		System.out.println("auditRunDateData="+auditRunDate);
 		auditRunDate.sendKeys(auditRunDateData);
-		constants.test.log(LogStatus.PASS, "'Audit Run Date' = '"+testdata.get("Audit Run Date"+constants.i)+"'");
+		constants.test.log(LogStatus.PASS, "'Audit Run Date' = '"+auditRunDateData+"'");
 		
 		
 		if(testdata.get("Sampling Method"+constants.i).isEmpty()){
